@@ -25,7 +25,7 @@ const stats = [
 
 export default function StatsBar() {
   return (
-    <section className="w-full py-16 px-6">
+    <section className="w-full py-16 max-w-6xl mx-auto px-4">
       
       <div className="max-w-6xl mx-auto grid grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-0">
         {stats.map((stat, index) => (
@@ -44,7 +44,7 @@ export default function StatsBar() {
                 {stat.value}
                 </div>
             </div>
-            <div className="text-base text-black/85 leading-relaxed max-w-[220px]">
+            <div className="text-base font-medium text-black/85 leading-relaxed max-w-[220px]">
               {stat.highlight ? (
                 <>
                   {stat.label} <span className="text-[var(--purple)] font-medium">{stat.highlight}</span> {stat.suffix}

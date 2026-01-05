@@ -3,7 +3,7 @@ import StatsBar from "./StatsBar"
 
 const IntroSection = () => {
   return (
-    <div className='grid grid-col-1 h-full '> {/* Remove h-full, use min-h instead */}
+    <div className='grid grid-col-1 h-full'> {/* Remove h-full, use min-h instead */}
         <DoubleGridSection>
             {/* Left Column - Text Content */}
             <div className="flex flex-col justify-center">
@@ -21,7 +21,7 @@ const IntroSection = () => {
             <div className="relative">
             </div>
         </DoubleGridSection>
-        <div className="clipped-section bg-white w-full mt-auto"> {/* Remove flex-1 h-full, add mt-auto */}
+        <div className="clipped-section bg-white w-full  mt-auto"> {/* Remove flex-1 h-full, add mt-auto */}
            <StatsBar />
         </div>
     </div>

@@ -1,3 +1,4 @@
+import EnergyTodaySection from "./components/EnergyTodaySection/EnergyTodaySection";
 import FluidBackground from "./components/GradientBackground/FluidBackground";
 import IntroSection from "./components/IntroSection/IntroSection";
 import Header from "./components/Navigation/Header";
@@ -15,7 +16,7 @@ function App() {
       </div>
 
       <section id="about" className="min-h-screen bg-amber-500">
-        {/* about content */}
+        <EnergyTodaySection />
       </section>
 
       <section id="services" className="min-h-screen bg-gray-800">
