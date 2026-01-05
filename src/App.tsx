@@ -1,35 +1,32 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import FluidBackground from "./components/GradientBackground/FluidBackground";
+import IntroSection from "./components/IntroSection/IntroSection";
+import Header from "./components/Navigation/Header";
+
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+    <div className="overflow-x-hidden">
+      <FluidBackground />
+      <div className="relative grid grid-rows-[auto_1fr] min-h-screen">
+        <Header />
+        <section id="home">
+          <IntroSection />
+        </section>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+
+      <section id="about" className="min-h-screen bg-amber-500">
+        {/* about content */}
+      </section>
+
+      <section id="services" className="min-h-screen bg-gray-800">
+        {/* services content */}
+      </section>
+
+      <section id="contact" className="min-h-screen bg-blue-600">
+        {/* contact content */}
+      </section>
+    </div>
+  );
 }
 
-export default App
+export default App;
