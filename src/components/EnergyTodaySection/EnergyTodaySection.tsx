@@ -1,5 +1,3 @@
-import React from 'react'
-
 const EnergyTodaySection = () => {
   return (
     <div className='max-w-6xl mx-auto px-4 grid grid-cols-3 gap-4'>
