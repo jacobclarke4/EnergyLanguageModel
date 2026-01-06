@@ -1,8 +1,9 @@
 import EnergyTodaySection from "./components/EnergyTodaySection/EnergyTodaySection";
 import FluidBackground from "./components/GradientBackground/FluidBackground";
 import IntroSection from "./components/IntroSection/IntroSection";
+import LeadershipTeamSection from "./components/LeadershipTeamSection/LeadershipTeamSection";
 import Header from "./components/Navigation/Header";
-
+import TargetUsersSection from "./components/TargetUsers/TargetUsersSection";
 
 function App() {
   return (
@@ -15,14 +16,16 @@ function App() {
         </section>
       </div>
 
-      <section id="about" className="min-h-screen bg-amber-500">
+      <section id="about">
         <EnergyTodaySection />
       </section>
 
-      <section id="services" className="min-h-screen bg-gray-800">
-        {/* services content */}
+      <section id="services" className="min-h-screen ">
+        <TargetUsersSection />
       </section>
-
+      <section id="Team" className="min-h-screen ">
+        <LeadershipTeamSection />
+      </section>
       <section id="contact" className="min-h-screen bg-blue-600">
         {/* contact content */}
       </section>

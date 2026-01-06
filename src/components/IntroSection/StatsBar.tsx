@@ -24,7 +24,7 @@ const stats = [
 
 export default function StatsBar() {
   return (
-    <section className="w-full py-4 sm:py-4 md:py-6 lg:py-8 max-w-6xl mx-auto px-4">
+    <section className="w-full py-4 sm:py-4 md:py-6 lg:py-8 max-w-6xl mx-auto px-4 self-center">
       
       <div className="max-w-6xl mx-auto grid grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-0">
         {stats.map((stat, index) => (
