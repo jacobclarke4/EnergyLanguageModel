@@ -1,4 +1,3 @@
-import React from 'react'
 import HanLiu from '../../assets/team/Han+Liu.png'
 import AdamPleasant from '../../assets/team/Adam+Pleasant.png'
 import MarkPruitt from '../../assets/team/Mark+Pruitt.png'
