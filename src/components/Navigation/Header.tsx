@@ -17,7 +17,7 @@ const Header = () => {
   return (
     <header className="top-0 relative z-50">
       <nav className="max-w-6xl mx-auto px-4 py-4 gap-6 flex items-center relative z-50">
-        <div className="text-3xl font-bold text-white">ELM</div>
+        <div className="text-xl sm:text-xl md:text-2xl lg:text-3xl font-bold text-white">ELM</div>
         
         {/* Desktop Navigation */}
         <div className="hidden md:flex gap-1">

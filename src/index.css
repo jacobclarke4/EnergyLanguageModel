@@ -23,6 +23,6 @@
 }
 
 .clipped-section {
-  clip-path: polygon(0 0, 100% clamp(8%, 20vw, 30%), 100% 100%, 0 100%);
+  clip-path: polygon(0 0, 100% clamp(8%, 20vw,30%), 100% 100%, 0 100%);
   padding-top: clamp(80px, 25vh, 100px);
 }
