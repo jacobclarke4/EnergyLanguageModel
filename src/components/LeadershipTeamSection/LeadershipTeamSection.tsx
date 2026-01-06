@@ -14,7 +14,7 @@ interface TeamMemberCardProps {
 
 const TeamMemberCard = ({ name, title, description, image }: TeamMemberCardProps) => {
   return (
-    <div className="relative rounded-2xl p-[3px] overflow-hidden group cursor-pointer shadow-[0_0_15px_rgba(0,0,0,0.1)] hover:shadow-[0_0_20px_rgba(0,0,0,0.15)] transition-shadow h-full">
+    <div className="relative rounded-2xl p-[3px] overflow-hidden group cursor-pointer shadow-[0_10px_15px_rgba(0,0,0,0.1)] hover:shadow-[0_10px_20px_rgba(0,0,0,0.15)] transition-shadow h-full">
       {/* Static background */}
       <div className="absolute inset-[-50%] bg-white" />
       
@@ -75,7 +75,7 @@ const teamMembers = [
 
 const LeadershipSection = () => {
   return (
-    <div className="py-16 bg-gray-50">
+    <div className=" bg-gray-50">
       <div className="max-w-6xl mx-auto px-4">
         {/* Header */}
         <div className="text-center mb-12">

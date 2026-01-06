@@ -4,11 +4,10 @@ import NavigationLink from './NavigationLink'
 
 const navLinks = [
   { href: '#challenge', label: 'Challenge' },
-  { href: '#solution', label: 'Solution' },
-  { href: '#technology', label: 'Technology' },
+  { href: '#data', label: 'Data' },
   { href: '#users', label: 'Users' },
   { href: '#team', label: 'Team' },
-  { href: '#contact', label: 'Contact' },
+
 ]
 
 const Header = () => {
@@ -17,7 +16,9 @@ const Header = () => {
   return (
     <header className="top-0 relative z-50">
       <nav className="max-w-6xl mx-auto px-4 py-4 gap-6 flex items-center relative z-50">
-        <div className="text-xl sm:text-xl md:text-2xl lg:text-3xl font-bold text-white">ELM</div>
+        <a href="#home" className="text-xl sm:text-xl md:text-2xl lg:text-3xl font-bold text-white hover:text-white/80 transition-colors">
+          ELM
+        </a>
         
         {/* Desktop Navigation */}
         <div className="hidden md:flex gap-1">
@@ -79,7 +80,7 @@ const Header = () => {
               key={link.href}
               href={link.href}
               onClick={() => setIsOpen(false)}
-              className="text-white/80 hover:text-white text-2xl font-medium transition-colors"
+              className="text-white/80 hover:text-white text-2xl font-medium transition-colors cursor-pointer"
             >
               {link.label}
             </a>

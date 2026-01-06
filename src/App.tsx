@@ -1,4 +1,6 @@
+import DataTypesSection from "./components/DataTypesSection/DataTypesSection";
 import EnergyTodaySection from "./components/EnergyTodaySection/EnergyTodaySection";
+import FormSection from "./components/FormSection.tsx/FormSection";
 import FluidBackground from "./components/GradientBackground/FluidBackground";
 import IntroSection from "./components/IntroSection/IntroSection";
 import LeadershipTeamSection from "./components/LeadershipTeamSection/LeadershipTeamSection";
@@ -16,18 +18,24 @@ function App() {
         </section>
       </div>
 
-      <section id="about">
+      <section id="challenge" className="py-16">
         <EnergyTodaySection />
       </section>
 
-      <section id="services" className="min-h-screen ">
+      <section id="data" className="py-16">
+        <DataTypesSection />
+      </section>
+
+      <section id="users" className="min-h-screen py-16">
         <TargetUsersSection />
       </section>
-      <section id="Team" className="min-h-screen ">
+
+      <section id="team" className="min-h-screen py-16">
         <LeadershipTeamSection />
       </section>
-      <section id="contact" className="min-h-screen bg-blue-600">
-        {/* contact content */}
+
+      <section id="contact" className="min-h-screen py-16">
+        <FormSection />
       </section>
     </div>
   );

@@ -9,7 +9,7 @@ const IntroSection = () => {
               <h1 className="text-5xl/tight sm:text-5xl/tight md:text-6xl/tight lg:text-7xl/tight font-bold text-white mb-6">
                 Energy Language Model
               </h1>
-              <h2 className='text-lg/tight sm:text-xl/tight md:text-2xl/tight lg:text-3xl/tight font-bold text-white mb-6'>The Largest and Most Capable Energy Domain Language Model</h2>
+              <h2 className='text-base/tight sm:text-lg/tight md:text-xl/tight lg:text-2xl/tight font-bold text-white mb-6'>The Largest and Most Capable Energy Domain Language Model</h2>
               <div className="flex gap-4">
                   <button className="px-4 py-1.5 rounded-full font-bold text-black bg-white text-base">
                   Join Waitlist

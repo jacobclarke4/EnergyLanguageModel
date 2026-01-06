@@ -1,75 +1,100 @@
-import React, { useState, useEffect } from 'react'
-import { FileText, Image, AudioLines, Video, Code } from 'lucide-react'
-
-interface DataTypeCardProps {
-  title: string
-  icon: React.ReactNode
-  isActive: boolean
-}
-
-const DataTypeCard = ({ title, icon, isActive }: DataTypeCardProps) => {
-  return (
-    <div className="relative rounded-2xl p-[3px] overflow-hidden group cursor-pointer shadow-[0_10px_15px_rgba(0,0,0,0.1)] hover:shadow-[0_10px_20px_rgba(0,0,0,0.15)] transition-shadow">
-      {/* Static white background */}
-      <div className="absolute inset-[-50%] bg-white" />
-      
-      {/* Animated rotating gradient border with fade */}
-      <div 
-        className={`absolute inset-[-50%] animated-gradient-border transition-opacity duration-500 ${
-          isActive ? 'opacity-100' : 'opacity-0'
-        }`} 
-      />
-      
-      {/* Card content */}
-      <div className="relative bg-white rounded-2xl p-4 h-full w-full  ">
-        <div className='justify-self-center'>
-            <div className="w-12 h-12 flex items-center justify-center mb-4">
-            {icon}
-            </div>
-            <h3 className="text-xl font-bold text-gray-900">{title}</h3>
-        </div>
-      </div>
-    </div>
-  )
-}
-
-const dataTypes = [
-  { title: "Text", icon: <FileText className="w-8 h-8 text-blue-600" /> },
-  { title: "Image", icon: <Image className="w-8 h-8 text-purple-600" /> },
-  { title: "Audio", icon: <AudioLines className="w-8 h-8 text-emerald-600" /> },
-  { title: "Video", icon: <Video className="w-8 h-8 text-red-500" /> },
-  { title: "Code", icon: <Code className="w-8 h-8 text-amber-500" /> },
-]
+import React, { useState, useEffect, useRef } from 'react'
+import EnergyTree from '../../assets/EnergyTree.svg'
 
 const EnergyTodaySection = () => {
-  const [activeIndex, setActiveIndex] = useState(0)
+  const [isVisible, setIsVisible] = useState(false)
+  const sectionRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
-    const interval = setInterval(() => {
-      setActiveIndex((prev) => (prev + 1) % dataTypes.length)
-    }, 4000)
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true)
+        }
+      },
+      { threshold: 0.2 }
+    )
 
-    return () => clearInterval(interval)
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current)
+    }
+
+    return () => observer.disconnect()
   }, [])
 
+  const challenges = [
+    { 
+      title: "Unprecedented Complexity", 
+      description: "More than 10,000,000 different tariff combinations across 3,000+ utilities in the US alone." 
+    },
+    { 
+      title: "Growing Energy Demand", 
+      description: "More people need more energy than ever before, driven by electrification and digital transformation." 
+    },
+    { 
+      title: "Market Accessibility", 
+      description: "Energy markets are more accessible but more complicated than ever before, requiring expert navigation." 
+    },
+    { 
+      title: "Monetization Promise", 
+      description: "Monetizing energy opportunities has more promise than ever before, but requires sophisticated analysis." 
+    },
+  ]
+
   return (
-    <div className="grid grid-cols-1 gap-4 max-w-6xl mx-auto">
-      <div className="px-4 grid grid-cols-12 gap-4">
-        <div className="col-span-10 sm:col-span-10 md:col-span-9 lg:col-span-7">
-          <h2 className="text-3xl/tight sm:text-3xl/tight md:text-4xl/tight lg:text-5xl/tight font-bold text-black mb-6 mt-12">
-            ELM processes and generates all forms of data
-          </h2>
-        </div>
-      </div>
-      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 px-4">
-        {dataTypes.map((item, index) => (
-          <DataTypeCard 
-            key={item.title} 
-            title={item.title} 
-            icon={item.icon} 
-            isActive={index === activeIndex}
+    <div ref={sectionRef} className="relative overflow-hidden">
+      {/* Angled section using clip-path */}
+      <div 
+        className="bg-[var(--dark-purple)] relative"
+        style={{
+          clipPath: 'polygon(0 80px, 100% 0, 100% 100%, 0 100%)'
+        }}
+      >
+        {/* Tree - Absolute positioned, clipping off right and bottom edge */}
+        <div 
+          className={`absolute top-1/2 -translate-y-[40%] right-0 translate-x-[15%] h-[120%] aspect-square pointer-events-none hidden lg:block transition-all duration-1000 delay-300 ${
+            isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-90'
+          }`}
+        >
+          <img 
+            src={EnergyTree} 
+            alt="" 
+            className="w-full h-full object-contain object-top"
           />
-        ))}
+        </div>
+
+        <div className="max-w-6xl mx-auto px-4 pt-32 pb-20 relative z-10">
+          {/* Left-aligned content */}
+          <div 
+            className={`max-w-xl transition-all duration-700 ${
+              isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+            }`}
+          >
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6">
+              Energy Today
+            </h2>
+            <p className="text-gray-400 text-lg leading-relaxed mb-12">
+              The energy landscape has never been more complex—or more full of opportunity.
+            </p>
+          </div>
+
+          {/* Stats/Challenges row */}
+          <div 
+            className={`grid grid-cols-2 gap-6 lg:max-w-[50%] transition-all duration-700 delay-300 ${
+              isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+            }`}
+          >
+            {challenges.map((challenge, index) => (
+              <div key={index} className="flex gap-4">
+                <div className="bg-[var(--purple)] w-1 rounded-full flex-shrink-0" />
+                <div>
+                  <p className="text-lg md:text-xl font-bold text-white mb-2">{challenge.title}</p>
+                  <p className="text-sm text-gray-400 leading-relaxed">{challenge.description}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
       </div>
     </div>
   )
