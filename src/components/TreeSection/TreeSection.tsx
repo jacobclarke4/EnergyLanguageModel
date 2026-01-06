@@ -1,4 +1,3 @@
-import React from 'react'
 import EnergyTree from '../../assets/EnergyTree.svg'
 
 const TreeSection = () => {
