@@ -26,15 +26,15 @@ function App() {
         <DataTypesSection />
       </section>
 
-      <section id="users" className="min-h-screen py-16">
+      <section id="users" className="py-16">
         <TargetUsersSection />
       </section>
 
-      <section id="team" className="min-h-screen py-16">
+      <section id="team" className="py-16">
         <LeadershipTeamSection />
       </section>
 
-      <section id="contact" className="min-h-screen py-16">
+      <section id="contact" className="py-16">
         <FormSection />
       </section>
     </div>

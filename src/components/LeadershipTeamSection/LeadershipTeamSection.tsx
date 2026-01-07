@@ -1,4 +1,3 @@
-import HanLiu from '../../assets/team/Han+Liu.png'
 import AdamPleasant from '../../assets/team/Adam+Pleasant.png'
 import MarkPruitt from '../../assets/team/Mark+Pruitt.png'
 import MarkNakayama from '../../assets/team/Mark+Nakayama.png'
@@ -41,12 +40,6 @@ const TeamMemberCard = ({ name, title, description, image }: TeamMemberCardProps
 
 const teamMembers = [
   {
-    name: "Han Liu",
-    title: "Chief Technology Officer",
-    description: "Director of MAGICS lab at Northwestern University. Former Tencent AI Lab director. PhD from Carnegie Mellon. Multiple prestigious AI awards.",
-    image: HanLiu
-  },
-  {
     name: "Adam Pleasant",
     title: "Chief Operating Officer",
     description: "5 years of energy market strategy expertise. Head of Strategic Initiatives at Truffle Pig. Northwestern University MSES Teaching Team.",
@@ -74,7 +67,7 @@ const teamMembers = [
 
 const LeadershipSection = () => {
   return (
-    <div className=" bg-gray-50">
+    <div className="">
       <div className="max-w-6xl mx-auto px-4">
         {/* Header */}
         <div className="text-center mb-12">
@@ -87,7 +80,7 @@ const LeadershipSection = () => {
         </div>
 
         {/* Team grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6">
           {teamMembers.map((member) => (
             <TeamMemberCard
               key={member.name}

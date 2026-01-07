@@ -23,7 +23,7 @@ const FormSection = () => {
   }
 
   return (
-    <div className="bg-gray-50">
+    <div className="">
       <div className="max-w-2xl mx-auto px-4">
         {/* Header */}
         <div className="text-center mb-10">
